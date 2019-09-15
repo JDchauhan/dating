@@ -1,0 +1,27 @@
+<% include partials/header.ejs %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+<script src="/js/dashboard.js"></script>
+</head>
+
+<body>
+  <button type="button" style='display:none' id="btnClk" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Popup image</button>
+
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img id="imageToShow" src="//placehold.it/1000x600" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="msg"></div>
+  <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+    <input type="file" name="images" />
+    <input type="button" name="images" id="imageUpload" value="submit" />
+  </form>
+  <div id="images" class="row m-5">
+
+  </div>
+  <% include partials/footer.ejs %>
